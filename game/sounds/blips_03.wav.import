@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blips_03.wav-6b987e7c20da8e5bc43dfce9df0cc717.sample"
+
+[deps]
+
+source_file="res://sounds/blips_03.wav"
+dest_files=[ "res://.import/blips_03.wav-6b987e7c20da8e5bc43dfce9df0cc717.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
