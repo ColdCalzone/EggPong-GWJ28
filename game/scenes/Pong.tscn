@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://objects/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Paddle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/CelingFloor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Pong.gd" type="Script" id=4]
 [ext_resource path="res://objects/Score.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/Speedometer.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 240 )
@@ -50,3 +51,11 @@ shape = SubResource( 2 )
 [node name="Score" parent="UI" instance=ExtResource( 5 )]
 margin_left = 160.0
 margin_right = -160.0
+
+[node name="SpeedometerRight" parent="UI" instance=ExtResource( 6 )]
+margin_left = 532.742
+margin_top = -0.221588
+margin_right = -1.25787
+margin_bottom = -288.222
+
+[node name="SpeedometerLeft" parent="UI" instance=ExtResource( 6 )]

@@ -11,9 +11,11 @@ onready var sprite = $Sprite
 export var direction : Vector2 = Vector2.ZERO
 export var speed : float = 200
 export var max_speed : float = 750
+export var min_speed : float = speed
 export var x_direction : int = -1
 export var first_go : bool = true
 export var is_shell : bool = false
+export var split_timer : float = 1
 var rotation_per_frame : float = 1.0
 var contact_time : int = 1
 var last_collision : String
@@ -22,7 +24,7 @@ var previous_positions : Array = [Vector2.ZERO, Vector2.ZERO]
 func _ready():
 	randomize()
 	sprite.texture = current_sprite
-	yield(get_tree().create_timer(1), "timeout")
+	if not is_shell: yield(get_tree().create_timer(1), "timeout")
 	if first_go:
 		x_direction = round(rand_range(0, 1))
 		randomize()
@@ -41,7 +43,7 @@ func _physics_process(delta : float):
 		contact_time += 1
 		previous_positions[0] = previous_positions[1]
 		previous_positions[1] = position
-		speed += 5
+		speed += 10
 		speed = clamp(speed, -max_speed, max_speed)
 		rotation_degrees += rotation_per_frame
 		if collision.collider.is_in_group("floor_ceil"):
@@ -59,9 +61,9 @@ func _physics_process(delta : float):
 	else:
 		contact_time = 1
 		rotation_degrees += rotation_per_frame
-	if Input.is_action_pressed("ui_accept"):
-		print(speed)
 	if speed == max_speed and not is_shell:
+		split_timer -= delta
+	if split_timer <= 0:
 		pong.split_egg()
 
 func stop():
