@@ -6,16 +6,22 @@ const TOP_SPRITE = preload("res://sprites/shell2.png")
 
 var current_sprite = WHOLE_SPRITE
 
+const BLEEPS = [preload("res://sounds/blips_01.wav"), preload("res://sounds/blips_02.wav"), preload("res://sounds/blips_03.wav")]
+
+var bleep_timer : float = 0.5
+var bleeping : bool = false
+
 onready var pong = get_parent()
 onready var sprite = $Sprite
+onready var sound = $Bleeps
 export var direction : Vector2 = Vector2.ZERO
 export var speed : float = 200
-export var max_speed : float = 750
+export var max_speed : float = 1200
 export var min_speed : float = speed
 export var x_direction : int = -1
 export var first_go : bool = true
 export var is_shell : bool = false
-export var split_timer : float = 1
+export var split_timer : float = 0.5
 var rotation_per_frame : float = 1.0
 var contact_time : int = 1
 var last_collision : String
@@ -36,6 +42,15 @@ func _physics_process(delta : float):
 	var collision = move_and_collide(direction.normalized() * speed * delta)
 	#print(direction)
 	if collision:
+		if bleep_timer > 0:
+			sound.stream = BLEEPS[rand_range(0, BLEEPS.size() - 1)]
+			sound.play()
+			bleeping = true
+		else:
+			randomize()
+			bleep_timer = 0.5
+			bleeping = false
+		if bleeping: bleep_timer -= delta
 		if direction.x > 0:
 			rotation_per_frame += (ceil(direction.x) * contact_time)
 		if direction.x < 0:
@@ -53,9 +68,9 @@ func _physics_process(delta : float):
 			last_collision = "paddle"
 			direction = direction.bounce(collision.normal)
 			if direction.x < 0:
-				direction.x = min(direction.x, -0.2)
+				direction.x = max(direction.x, -0.2)
 			if direction.x > 0:
-				direction.x = min(direction.x, 0.2)
+				direction.x = max(direction.x, 0.2)
 		if previous_positions[0] == previous_positions[1] and previous_positions[1] == position:
 			pong.score(self, int(position.x < 0) + 1)
 	else:

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/blips_13.wav-9d6e566227298ca7814ad82ce1ede6eb.sample"
+path="res://.import/blips_13.wav-8634ac5cd88be6c98ea6a56c9da178fa.sample"
 
 [deps]
 
-source_file="res://blips_13.wav"
-dest_files=[ "res://.import/blips_13.wav-9d6e566227298ca7814ad82ce1ede6eb.sample" ]
+source_file="res://sounds/blips_13.wav"
+dest_files=[ "res://.import/blips_13.wav-8634ac5cd88be6c98ea6a56c9da178fa.sample" ]
 
 [params]
 

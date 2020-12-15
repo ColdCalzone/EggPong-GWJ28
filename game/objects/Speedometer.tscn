@@ -4,7 +4,7 @@
 [ext_resource path="res://objects/Speedometer.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 32
 outline_size = 8
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
@@ -14,17 +14,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -534.0
 margin_bottom = -288.0
+rect_min_size = Vector2( 106, 72 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Readout" type="Label" parent="."]
-margin_right = 106.0
-margin_bottom = 72.0
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "10"
+text = "egg 10"
 __meta__ = {
 "_edit_use_anchors_": false
 }

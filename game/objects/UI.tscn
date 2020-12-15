@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/Score.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/Speedometer.tscn" type="PackedScene" id=4]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Center" type="CenterContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 134.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSort" type="VBoxContainer" parent="Center"]
+margin_left = 135.0
+margin_right = 505.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 320, 90 )
+size_flags_horizontal = 12
+size_flags_vertical = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreCenter" type="CenterContainer" parent="Center/VSort"]
+margin_right = 370.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" parent="Center/VSort/ScoreCenter" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_right = 345.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 320, 90 )
+
+[node name="SpeedCenter" type="CenterContainer" parent="Center/VSort"]
+margin_top = 94.0
+margin_right = 370.0
+margin_bottom = 134.0
+
+[node name="Speeds" type="HBoxContainer" parent="Center/VSort/SpeedCenter"]
+margin_right = 370.0
+margin_bottom = 40.0
+custom_constants/separation = 70
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedometerRight" parent="Center/VSort/SpeedCenter/Speeds" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+
+[node name="SpeedometerLeft" parent="Center/VSort/SpeedCenter/Speeds" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 220.0
+margin_right = 370.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )

@@ -4,8 +4,8 @@
 [ext_resource path="res://objects/Paddle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/CelingFloor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Pong.gd" type="Script" id=4]
-[ext_resource path="res://objects/Score.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/Speedometer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sounds/egg-crack.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 240 )
@@ -21,14 +21,17 @@ current = true
 
 [node name="Paddle" parent="." instance=ExtResource( 2 )]
 position = Vector2( -274, 0 )
+player2_or_ai = false
+speed = 5.0
 
 [node name="Paddle2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 274, 0 )
 player2_or_ai = true
+speed = 5.0
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 
-[node name="Celing" parent="." instance=ExtResource( 3 )]
+[node name="Ceilng" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -192 )
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
@@ -46,16 +49,7 @@ position = Vector2( 368, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2Net"]
 shape = SubResource( 2 )
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" parent="." instance=ExtResource( 5 )]
 
-[node name="Score" parent="UI" instance=ExtResource( 5 )]
-margin_left = 160.0
-margin_right = -160.0
-
-[node name="SpeedometerRight" parent="UI" instance=ExtResource( 6 )]
-margin_left = 532.742
-margin_top = -0.221588
-margin_right = -1.25787
-margin_bottom = -288.222
-
-[node name="SpeedometerLeft" parent="UI" instance=ExtResource( 6 )]
+[node name="Crack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
