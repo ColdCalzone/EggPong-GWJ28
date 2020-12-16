@@ -16,7 +16,7 @@ onready var sprite = $Sprite
 onready var sound = $Bleeps
 export var direction : Vector2 = Vector2.ZERO
 export var speed : float = 200
-export var max_speed : float = 1200
+export var max_speed : float = 800
 export var min_speed : float = speed
 export var x_direction : int = -1
 export var first_go : bool = true
@@ -36,6 +36,8 @@ func _ready():
 		randomize()
 	if x_direction == 0: x_direction = -1
 	direction.x = x_direction
+	# Testing line PLS DELETE LATER.
+	#direction = Vector2(0, 1)
 
 func _physics_process(delta : float):
 	sprite.texture = current_sprite
@@ -68,9 +70,9 @@ func _physics_process(delta : float):
 			last_collision = "paddle"
 			direction = direction.bounce(collision.normal)
 			if direction.x < 0:
-				direction.x = max(direction.x, -0.2)
+				direction.x = max(direction.x, -0.4)
 			if direction.x > 0:
-				direction.x = max(direction.x, 0.2)
+				direction.x = max(direction.x, 0.4)
 		if previous_positions[0] == previous_positions[1] and previous_positions[1] == position:
 			pong.score(self, int(position.x < 0) + 1)
 	else:

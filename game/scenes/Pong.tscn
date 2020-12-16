@@ -21,13 +21,10 @@ current = true
 
 [node name="Paddle" parent="." instance=ExtResource( 2 )]
 position = Vector2( -274, 0 )
-player2_or_ai = false
-speed = 5.0
 
 [node name="Paddle2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 274, 0 )
 player2_or_ai = true
-speed = 5.0
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 

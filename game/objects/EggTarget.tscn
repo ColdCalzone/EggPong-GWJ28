@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/egg_insides.png" type="Texture" id=1]
+[ext_resource path="res://objects/EggTarget.gd" type="Script" id=2]
+
+[node name="EggTarget" type="Control"]
+margin_right = 16.0
+margin_bottom = 16.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 2
+frame = 1

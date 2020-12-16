@@ -7,7 +7,9 @@ const TOP_EGG = preload("res://sprites/shell2.png")
 onready var player1_net = $Player1Net
 onready var player2_net = $Player2Net
 onready var crack = $Crack
-onready var score = $UI/Center/VSort/ScoreCenter/Score
+onready var score = $UI/Center/VSort/ScoreCenter/HSort/Score
+onready var left_eggs : Array = $UI/Center/VSort/ScoreCenter/HSort/EggTargetsLeft.get_children()
+onready var right_eggs : Array = $UI/Center/VSort/ScoreCenter/HSort/EggTargetsRight.get_children()
 onready var top_wall = $Ceilng
 onready var bot_wall = $Floor
 onready var ball = preload("res://objects/Ball.tscn")
@@ -25,7 +27,7 @@ var singleplayer = true
 func _ready():
 	egg = get_node("Ball")
 	speedometer_right.align_right()
-	OS.window_fullscreen = true
+	#OS.window_fullscreen = true
 	player1_net.connect("body_entered", self, "score", [2])
 	player2_net.connect("body_entered", self, "score", [1])
 

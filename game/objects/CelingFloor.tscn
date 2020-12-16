@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 318.898, 10 )
+extents = Vector2( 352, 10 )
 
 [node name="CelingFloor" type="StaticBody2D" groups=[
 "floor_ceil",

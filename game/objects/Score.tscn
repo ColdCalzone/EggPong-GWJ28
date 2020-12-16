@@ -11,18 +11,20 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Score" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_right = -320.0
-margin_bottom = -90.0
+anchor_right = 0.505
+anchor_bottom = 0.25
+margin_right = -0.199982
+margin_bottom = 7.62939e-06
+rect_min_size = Vector2( 323, 90 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Scores" type="HBoxContainer" parent="."]
-margin_right = 320.0
-margin_bottom = 90.0
+anchor_right = 1.067
+anchor_bottom = 1.0
+margin_right = -53.45
 rect_min_size = Vector2( 320, 90 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -30,7 +32,7 @@ __meta__ = {
 
 [node name="Player1Score" type="Label" parent="Scores"]
 margin_right = 124.0
-margin_bottom = 90.0
+margin_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -43,16 +45,17 @@ align = 2
 [node name="Split" type="TextureRect" parent="Scores"]
 margin_left = 128.0
 margin_right = 192.0
-margin_bottom = 90.0
+margin_bottom = 147.0
 texture = ExtResource( 1 )
 stretch_mode = 1
 
 [node name="Player2Score" type="Label" parent="Scores"]
 margin_left = 196.0
 margin_right = 320.0
-margin_bottom = 90.0
+margin_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_min_size = Vector2( 100, 90 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
