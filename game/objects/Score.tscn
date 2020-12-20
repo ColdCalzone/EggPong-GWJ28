@@ -6,7 +6,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
-outline_size = 8
+outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
@@ -31,8 +31,9 @@ __meta__ = {
 }
 
 [node name="Player1Score" type="Label" parent="Scores"]
+visible = false
 margin_right = 124.0
-margin_bottom = 147.0
+margin_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -43,16 +44,16 @@ text = "0"
 align = 2
 
 [node name="Split" type="TextureRect" parent="Scores"]
-margin_left = 128.0
-margin_right = 192.0
-margin_bottom = 147.0
+margin_right = 64.0
+margin_bottom = 90.0
 texture = ExtResource( 1 )
 stretch_mode = 1
 
 [node name="Player2Score" type="Label" parent="Scores"]
-margin_left = 196.0
+visible = false
+margin_left = 68.0
 margin_right = 320.0
-margin_bottom = 147.0
+margin_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 100, 90 )

@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://objects/EggTarget.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/UI.gd" type="Script" id=2]
 [ext_resource path="res://objects/Score.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Speedometer.tscn" type="PackedScene" id=4]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource( 2 )
 
 [node name="Center" type="CenterContainer" parent="."]
 margin_right = 640.0
@@ -14,8 +15,8 @@ __meta__ = {
 }
 
 [node name="VSort" type="VBoxContainer" parent="Center"]
-margin_left = 30.0
-margin_right = 609.0
+margin_left = 135.0
+margin_right = 505.0
 margin_bottom = 134.0
 rect_min_size = Vector2( 320, 90 )
 size_flags_horizontal = 12
@@ -25,85 +26,47 @@ __meta__ = {
 }
 
 [node name="ScoreCenter" type="CenterContainer" parent="Center/VSort"]
-margin_right = 579.0
+margin_right = 370.0
 margin_bottom = 90.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HSort" type="HBoxContainer" parent="Center/VSort/ScoreCenter"]
-margin_right = 579.0
+margin_left = 121.0
+margin_right = 249.0
 margin_bottom = 90.0
 custom_constants/separation = 32
 
 [node name="EggTargetsLeft" type="GridContainer" parent="Center/VSort/ScoreCenter/HSort"]
-margin_right = 96.0
 margin_bottom = 90.0
 custom_constants/vseparation = 32
 custom_constants/hseparation = 32
 columns = 4
-
-[node name="EggTarget3" parent="Center/VSort/ScoreCenter/HSort/EggTargetsLeft" instance=ExtResource( 1 )]
-margin_right = 0.0
-margin_bottom = 0.0
-
-[node name="EggTarget" parent="Center/VSort/ScoreCenter/HSort/EggTargetsLeft" instance=ExtResource( 1 )]
-margin_left = 32.0
-margin_right = 32.0
-margin_bottom = 0.0
-
-[node name="EggTarget5" parent="Center/VSort/ScoreCenter/HSort/EggTargetsLeft" instance=ExtResource( 1 )]
-margin_left = 64.0
-margin_right = 64.0
-margin_bottom = 0.0
-
-[node name="EggTarget6" parent="Center/VSort/ScoreCenter/HSort/EggTargetsLeft" instance=ExtResource( 1 )]
-margin_left = 96.0
-margin_right = 96.0
-margin_bottom = 0.0
 
 [node name="Score" parent="Center/VSort/ScoreCenter/HSort" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 128.0
-margin_right = 451.0
+margin_left = 32.0
+margin_right = 96.0
 margin_bottom = 90.0
+rect_min_size = Vector2( 64, 90 )
 
 [node name="EggTargetsRight" type="GridContainer" parent="Center/VSort/ScoreCenter/HSort"]
-margin_left = 483.0
-margin_right = 579.0
+margin_left = 128.0
+margin_right = 128.0
 margin_bottom = 90.0
 custom_constants/vseparation = 32
 custom_constants/hseparation = 32
 columns = 4
 
-[node name="EggTarget2" parent="Center/VSort/ScoreCenter/HSort/EggTargetsRight" instance=ExtResource( 1 )]
-margin_right = 0.0
-margin_bottom = 0.0
-
-[node name="EggTarget4" parent="Center/VSort/ScoreCenter/HSort/EggTargetsRight" instance=ExtResource( 1 )]
-margin_left = 32.0
-margin_right = 32.0
-margin_bottom = 0.0
-
-[node name="EggTarget7" parent="Center/VSort/ScoreCenter/HSort/EggTargetsRight" instance=ExtResource( 1 )]
-margin_left = 64.0
-margin_right = 64.0
-margin_bottom = 0.0
-
-[node name="EggTarget8" parent="Center/VSort/ScoreCenter/HSort/EggTargetsRight" instance=ExtResource( 1 )]
-margin_left = 96.0
-margin_right = 96.0
-margin_bottom = 0.0
-
 [node name="SpeedCenter" type="CenterContainer" parent="Center/VSort"]
 margin_top = 94.0
-margin_right = 579.0
+margin_right = 370.0
 margin_bottom = 134.0
 
 [node name="Speeds" type="HBoxContainer" parent="Center/VSort/SpeedCenter"]
-margin_left = 104.0
-margin_right = 474.0
+margin_right = 370.0
 margin_bottom = 40.0
 custom_constants/separation = 70
 __meta__ = {

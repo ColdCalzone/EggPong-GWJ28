@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/KarmaticArcade.tres" type="DynamicFont" id=1]
+[ext_resource path="res://objects/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/GameOptions.gd" type="Script" id=3]
+[ext_resource path="res://objects/TransitionIn.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[node name="GameOptions" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterOptions" type="CenterContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="CenterOptions"]
+margin_left = 158.0
+margin_top = 75.0
+margin_right = 482.0
+margin_bottom = 104.0
+
+[node name="Label" type="Label" parent="CenterOptions/HBox"]
+margin_top = 5.0
+margin_right = 56.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "Eggs"
+
+[node name="Goal" type="SpinBox" parent="CenterOptions/HBox"]
+margin_left = 60.0
+margin_right = 134.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 20, 25 )
+theme = SubResource( 1 )
+min_value = 1.0
+max_value = 99.0
+value = 11.0
+rounded = true
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SinglePlayer" type="CheckBox" parent="CenterOptions/HBox"]
+margin_left = 138.0
+margin_right = 324.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+pressed = true
+text = "Singleplayer"
+
+[node name="CenterStart" type="CenterContainer" parent="."]
+margin_top = 180.0
+margin_right = 640.0
+margin_bottom = 360.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterStart"]
+margin_left = 192.0
+margin_top = 66.0
+margin_right = 448.0
+margin_bottom = 114.0
+custom_constants/separation = 128
+
+[node name="MenuButton2" parent="CenterStart/HBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 64.0
+margin_bottom = 48.0
+slug = "back"
+text = "back"
+
+[node name="MenuButton" parent="CenterStart/HBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_top = 0.0
+margin_right = 256.0
+margin_bottom = 48.0
+slug = "start"
+text = "Start"
+
+[node name="TransitionIn" parent="." instance=ExtResource( 4 )]

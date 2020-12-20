@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="MenuBlank" type="Control"]
+anchor_right = 0.1
+anchor_bottom = 0.089
+margin_left = -32.0
+margin_top = -16.0
+margin_right = -32.0
+margin_bottom = -16.04
+rect_pivot_offset = Vector2( 32, 16 )

@@ -9,9 +9,16 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[node name="MenuButton" type="TextureButton"]
-margin_right = 32.0
-margin_bottom = 30.0
+[node name="MenuButton" type="TextureButton" groups=[
+"menu_button",
+]]
+anchor_left = -0.05
+anchor_top = -0.067
+anchor_right = 0.05
+anchor_bottom = 0.067
+margin_top = 0.120001
+margin_bottom = -0.120001
+rect_min_size = Vector2( 64, 48 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -19,15 +26,33 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 28, 24 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
+offset = Vector2( 2, 0 )
 hframes = 8
 
-[node name="Label" type="Label" parent="."]
-margin_left = -28.0
-margin_top = -10.0
-margin_right = 26.0
-margin_bottom = 9.0
+[node name="Center" type="CenterContainer" parent="."]
+anchor_left = 0.078
+anchor_top = 0.312
+anchor_right = 0.922
+anchor_bottom = 0.688
+margin_left = 0.0079999
+margin_top = 0.0240002
+margin_right = -0.00800323
+margin_bottom = 0.975998
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 54, 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Center"]
+margin_right = 54.0
+margin_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 custom_fonts/font = SubResource( 1 )
 text = "Text"
@@ -38,17 +63,15 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Fade" type="ColorRect" parent="."]
-anchor_left = -0.594
-anchor_top = -0.667
-anchor_right = 0.594
-anchor_bottom = 0.667
-margin_left = 0.00799942
-margin_top = 0.0100002
-margin_right = -0.00799942
-margin_bottom = -0.0100002
+anchor_top = -0.167
+anchor_right = 1.0
+anchor_bottom = 1.167
+margin_top = 0.0160007
+margin_bottom = -0.0160065
 grow_horizontal = 2
 grow_vertical = 2
-rect_pivot_offset = Vector2( 19, 20 )
+rect_min_size = Vector2( 64, 64 )
+rect_pivot_offset = Vector2( 32, 32 )
 mouse_filter = 1
 color = Color( 0, 0, 0, 0 )
 __meta__ = {

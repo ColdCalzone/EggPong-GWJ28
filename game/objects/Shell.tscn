@@ -25,3 +25,4 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
 [node name="Bleeps" type="AudioStreamPlayer2D" parent="."]
+bus = "SFX"

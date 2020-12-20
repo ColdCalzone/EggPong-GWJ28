@@ -1,8 +1,124 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/Egg_Title.png" type="Texture" id=1]
+[ext_resource path="res://objects/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/MenuBlank.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Titlescreen.gd" type="Script" id=4]
+[ext_resource path="res://objects/TransitionIn.tscn" type="PackedScene" id=5]
 
 [node name="Titlescreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LogoContainer" type="CenterContainer" parent="."]
+margin_right = 745.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 640, 160 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="LogoContainer"]
+margin_left = 147.0
+margin_right = 598.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 451, 160 )
+rect_pivot_offset = Vector2( 97, 18 )
+texture = ExtResource( 1 )
+stretch_mode = 1
+
+[node name="Buttonizer9000" type="CenterContainer" parent="."]
+anchor_top = 0.444
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.159988
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="GridContainer" parent="Buttonizer9000"]
+margin_left = 120.0
+margin_top = 26.0
+margin_right = 520.0
+margin_bottom = 174.0
+custom_constants/vseparation = 52
+custom_constants/hseparation = 48
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton2" parent="Buttonizer9000/Buttons" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 64.0
+margin_bottom = 48.0
+
+[node name="MenuBlank" parent="Buttonizer9000/Buttons" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.0
+margin_top = 0.0
+margin_right = 176.0
+margin_bottom = 48.0
+
+[node name="MenuBlank5" parent="Buttonizer9000/Buttons" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 224.0
+margin_top = 0.0
+margin_right = 288.0
+margin_bottom = 48.0
+
+[node name="MenuButton" parent="Buttonizer9000/Buttons" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 336.0
+margin_top = 0.0
+margin_right = 400.0
+margin_bottom = 48.0
+slug = "settings"
+text = "Settings"
+
+[node name="MenuBlank3" parent="Buttonizer9000/Buttons" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 100.0
+margin_right = 64.0
+margin_bottom = 148.0
+
+[node name="MenuButton3" parent="Buttonizer9000/Buttons" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.0
+margin_top = 100.0
+margin_right = 176.0
+margin_bottom = 148.0
+slug = "credits"
+text = "credits"
+
+[node name="quit" parent="Buttonizer9000/Buttons" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 224.0
+margin_top = 100.0
+margin_right = 288.0
+margin_bottom = 148.0
+slug = "quit"
+text = "quit"
+
+[node name="TransitionIn" parent="." instance=ExtResource( 5 )]

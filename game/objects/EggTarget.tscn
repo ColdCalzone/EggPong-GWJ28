@@ -4,16 +4,18 @@
 [ext_resource path="res://objects/EggTarget.gd" type="Script" id=2]
 
 [node name="EggTarget" type="Control"]
-margin_right = 16.0
-margin_bottom = 16.0
+anchor_left = 0.025
+anchor_right = 0.05
+anchor_bottom = 0.089
+margin_bottom = -0.0400009
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 16 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
-centered = false
 hframes = 2
 frame = 1

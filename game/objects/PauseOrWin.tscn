@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/Egg_Title.png" type="Texture" id=1]
+[ext_resource path="res://objects/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/PauseOrWin.gd" type="Script" id=3]
+[ext_resource path="res://fonts/ka1.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="InputEventKey" id=2]
+scancode = 16777217
+
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
+
+[node name="PauseOrWin" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 359.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Center" type="CenterContainer" parent="."]
+anchor_right = 1.092
+anchor_bottom = 0.358
+margin_right = 0.119995
+margin_bottom = 0.119995
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vbox" type="VBoxContainer" parent="Center"]
+margin_left = 222.0
+margin_top = 19.0
+margin_right = 476.0
+margin_bottom = 109.0
+
+[node name="Logo" type="TextureRect" parent="Center/Vbox"]
+margin_right = 254.0
+margin_bottom = 90.0
+texture = ExtResource( 1 )
+
+[node name="Paused" type="CenterContainer" parent="."]
+margin_top = 118.0
+margin_right = 640.0
+margin_bottom = 154.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Paused"]
+margin_left = 206.0
+margin_right = 434.0
+margin_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 1 )
+text = "--PAUSED--"
+
+[node name="CenterButtons" type="CenterContainer" parent="."]
+anchor_top = 0.333
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.119995
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CenterButtons"]
+margin_left = 288.0
+margin_top = 44.0
+margin_right = 352.0
+margin_bottom = 196.0
+
+[node name="MenuButton" parent="CenterButtons/HBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 64.0
+margin_bottom = 48.0
+shortcut = SubResource( 3 )
+slug = "res"
+text = "resume"
+
+[node name="MenuButton3" parent="CenterButtons/HBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 52.0
+margin_right = 64.0
+margin_bottom = 100.0
+slug = "rem"
+text = "rematch"
+
+[node name="MenuButton2" parent="CenterButtons/HBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 104.0
+margin_right = 64.0
+margin_bottom = 152.0
+slug = "quit"
+text = "quit"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
