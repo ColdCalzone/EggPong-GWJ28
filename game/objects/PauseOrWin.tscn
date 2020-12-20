@@ -27,7 +27,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 640.0
 margin_bottom = 359.0
-color = Color( 0, 0, 0, 0.784314 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -121,6 +121,7 @@ slug = "quit"
 text = "quit"
 
 [node name="Tween" type="Tween" parent="."]
+pause_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.75

@@ -6,8 +6,12 @@ var singleplayer : bool = false
 
 onready var paused = $Paused/Label
 onready var timer = $Timer
+onready var tween = $Tween
+onready var fade = $ColorRect
 
 func _ready():
+	tween.interpolate_property(fade, "color", Color(0, 0, 0, 0), Color(0, 0, 0, 0.7843), 0.5)
+	tween.start()
 	if state == "pause":
 		$CenterButtons/HBoxContainer/MenuButton3.visible = false
 		timer.connect("timeout", self, "flip_visible_text")

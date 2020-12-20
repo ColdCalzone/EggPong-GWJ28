@@ -92,6 +92,8 @@ func score(body, player : int):
 		win.state = "win"
 		win.winner = int(right_score > left_score) + 1
 		win.singleplayer = singleplayer
+		set_physics_process(false)
+		yield(get_tree().create_timer(1), "timeout")
 		ui.add_child(win)
 		get_tree().paused = true
 	else:
